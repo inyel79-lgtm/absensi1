@@ -4,15 +4,11 @@
 <head>
     <base href="https://presensi.baritotimurkab.go.id/public/">
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="https://presensi.baritotimurkab.go.id/public/images/favicon.png">
-    <title>Absensi QR Code - Kantor Kecamatan Dusun Timur</title>
-    
-    <!-- StyleSheets -->
-    <link rel="stylesheet" href="https://presensi.baritotimurkab.go.id/public/assets/css/dashlite.css?ver=3.1.3">
-    <link id="skin-default" rel="stylesheet" href="https://presensi.baritotimurkab.go.id/public/assets/css/theme.css?ver=3.1.3">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/> 
 
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="https://presensi.baritotimurkab.go.id/public/images/favicon.png">
+    <!-- Page Title  -->
+    <title>Absensi QR Code</title>
     <style>
         .running-text-container {
             overflow: hidden;
@@ -24,213 +20,160 @@
             position: absolute;
             left: 100%;
         }
-
-        /* Container untuk tabel */
-        .table-container {
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Animasi scroll tabel */
-        @keyframes scroll {
-            2% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
-        }
-
-        .table-container tbody {
-            animation: scroll var(--scroll-duration, 10s) linear infinite;
-        }
-
-        .table-container:hover tbody {
-            animation-play-state: paused;
-        }
-
-        .table-container table {
-            width: 100%;
-            table-layout: fixed;
-        }
-
-        .table-responsive:first-child {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-
-        .table-container thead,
-        .table-container tbody tr {
-            display: table;
-            width: 100%;
-            table-layout: auto;
-        }
-
-        .table-container tbody {
-            display: block;
-            overflow: hidden;
-        }
-
-        .alert-icon {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
     </style>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="https://presensi.baritotimurkab.go.id/public/assets/css/dashlite.css?ver=3.1.3">
+    <link id="skin-default" rel="stylesheet" href="https://presensi.baritotimurkab.go.id/public/assets/css/theme.css?ver=3.1.3">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/> 
+    <style>
+    .table-container {
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    @keyframes scroll {
+        2% {
+            transform: translateY(0);
+        }
+        100 {
+            transform: translateY(-100%);
+        }
+    }
+
+    .table-container tbody {
+        animation: scroll var(--scroll-duration) linear infinite;
+    }
+
+    .table-container:hover tbody {
+        animation-play-state: paused;
+    }
+
+    .table-container table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .table-responsive:first-child {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .table-container thead,
+    .table-container tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: auto;
+    }
+
+    .table-container tbody {
+        display: block;
+        overflow: hidden;
+    }
+	</style>
 </head>
 
-<body class="nk-body npc-invest bg-lighter">
+<body class="nk-body npc-invest bg-lighter ">
     <div class="nk-app-root">
-        <div class="nk-wrap">
+        <div class="nk-wrap ">
             <div class="nk-content nk-content-fluid">
                 <div class="container-xl wide-xl">
                     <div class="nk-content-inner">
                         <div class="nk-content-body">
                             
-                            <!-- HEADER -->
-                            <div class="nk-block-head nk-block-head-sm">
-                                <div class="nk-block-between">
-                                    <div class="nk-block-head-content">
-                                        <h5 class="title">
-                                            <img src="https://presensi.baritotimurkab.go.id/public/images/bartim2.png" width="40" alt="Logo">
-                                            KANTOR KECAMATAN DUSUN TIMUR
-                                        </h5>
-                                    </div>
-                                    <div class="nk-block-head-content">
-                                        <a href="https://presensi.baritotimurkab.go.id/auth/logout" class="btn btn-white btn-outline-light">
-                                            <em class="icon ni ni-power"></em> Log Out
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+<!-- HEADER -->
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h5 class="title">
+                <img src="https://presensi.baritotimurkab.go.id/public/images/bartim2.png" width="40">
+                KANTOR KECAMATAN DUSUN TIMUR            </h5>
+        </div>
+        <div class="nk-block-head-content">
+            <a href="https://presensi.baritotimurkab.go.id/auth/logout" class="btn btn-white btn-outline-light">
+                <em class="icon ni ni-power"></em> Log Out
+            </a>
+        </div>
+    </div>
+</div>
 
-                            <!-- INFORMASI JAM KERJA & TIPS -->
-                            <div class="row mb-4">
-                                <div class="col-12 col-md-12 col-lg-5">
-                                    <small>
-                                        * Tips : Tekan F11 untuk layar fullscreen<br>
-                                        * Tips : Urutkan Pegawai pada Menu Kelola Pegawai oleh Admin SKPD<br>
-                                        * Tips : Jika Kode QR gagal scan, muat ulang halaman / tekan F5
-                                        <br><br>
-                                        <b>PERINGATAN :</b><br>
-                                        <b>JANGAN MERUBAH JAM DAN TANGGAL KOMPUTER</b><br>
-                                        <b>AKAN MENYEBABKAN ANOMALI DATA ABSEN</b>
-                                    </small>
-                                </div>
+<div class="row mb-4">
+    <div class="col-12 col-md-12 col-lg-5">
+        <small>
+            * Tips : Tekan F11 untuk layar fullscreen<br>
+            * Tips : Urutkan Pegawai pada Menu Kelola Pegawai oleh Admin SKPD<br>
+            * Tips : Jika Kode QR gagal scan, muat ulang halaman / tekan F5
+            <br><br>
+            <b>PERINGATAN :</b><br>
+            <b>JANGAN MERUBAH JAM DAN TANGGAL KOMPUTER</b><br>
+            <b>AKAN MENYEBABKAN ANOMALI DATA ABSEN</b>
+        </small>
+    </div>
 
-                                <div class="col-12 col-lg-7">
-                                    <div class="text-center mb-2">  
-                                       <strong>Jam Kerja Sistem Presensi ATEI</strong><br>   
-                                        <hr class="mt-1 mb-2">
-                                    </div> 
+    <div class="col-12 col-lg-7">
+        <div class="text-center mb-2">  
+           <strong>Jam Kerja Sistem Presensi ATEI</strong><br>   
+            <hr class="mt-1 mb-2">
+        </div> 
 
-                                    <div class="row">
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <strong>Jam Kerja OPD</strong><br>
-                                            <small>Jam Masuk : 08:00 WIB<br>Jam Pulang : 16:00 WIB<br>Hari Kerja : 5 Hari</small>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <strong>Jam Kerja RSUD/PKM</strong><br>
-                                            <small>Jam Masuk : 08:00 WIB<br>Jam Pulang : 15:00 WIB<br>Hari Kerja : 6 Hari</small>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <strong>Jam Kerja SD/SMP</strong><br>
-                                            <small>Jam Masuk : 07:30 WIB<br>Jam Pulang : 12:30 WIB<br>Hari Kerja : 6 Hari</small>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <strong>Jam Kerja TK</strong><br>
-                                            <small>Jam Masuk : 07:30 WIB<br>Jam Pulang : 10:30 WIB<br>Hari Kerja : 6 Hari</small>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ROW 2 : PANEL QR ABSENSI -->
-                            <div class="row">
-                                <!-- ABSENSI MASUK -->
-                                <div class="col-lg-6 mb-3">
-                                    <div class="card">
-                                        <input type="hidden" id="id_qr_scan" value="31">
-                                        <div class="row h-250px">
-                                            <div class="col-5 d-flex align-items-center justify-content-center">
-                                                <div id="qrcode_pagi" class="m-2"></div>
-                                            </div>
-                                            <div class="col-7 bg-primary h-250px">
-                                                <div class="card-body text-white">
-                                                    <h4>ABSENSI MASUK</h4>
-                                                    <h6>Scan untuk melakukan absensi masuk</h6>
-                                                    <div class="alert bg-dark mt-3">
-                                                        <h3 id="qrid" class="text-white"></h3>
-                                                        <h6 id="pukul" class="text-white"></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- ABSENSI KELUAR -->
-                                <div class="col-lg-6 mb-3">
-                                    <div class="card">
-                                        <div class="row h-250px">
-                                            <div class="col-5 d-flex align-items-center justify-content-center">
-                                                <div id="qrcode_out" class="m-2"></div>
-                                            </div>
-                                            <div class="col-7 bg-danger h-250px">
-                                                <div class="card-body text-white">
-                                                    <h4>ABSENSI KELUAR</h4>
-                                                    <h6>Scan untuk melakukan absensi keluar</h6>
-                                                    <div class="alert bg-dark mt-3">
-                                                        <h3 id="qrid_out" class="text-white"></h3>
-                                                        <h6 id="pukulOut" class="text-white"></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ROW 3 : TABEL ABSENSI -->
-                            <div class="row mt-3">
-                                <div class="col-lg-12">
-                                    <div class="card p-3">
-                                        <h3>DAFTAR ABSENSI : <span id="tanggal-sekarang"></span></h3>
-
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr class="bg-success text-white text-center">
-                                                        <th width="5%">No</th>
-                                                        <th width="25%">Nama</th>
-                                                        <th width="30%">Jabatan</th>
-                                                        <th width="8%">Check IN</th>
-                                                        <th width="8%">Check OUT</th>
-                                                        <th width="12%">Keterangan</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-
-                                        <div class="table-responsive table-container">
-                                            <table class="table table-bordered" id="tableAbsenToday">
-                                                <tbody></tbody>
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <strong>Jam Kerja OPD</strong><br>
+                <small>
+                    Jam Masuk : 08:00 WIB<br>
+                    Jam Pulang : 16:00 WIB<br>
+                    Hari Kerja : 5 Hari
+                </small>
             </div>
 
-            <!-- FOOTER -->
-            <div class="nk-footer nk-footer-fluid bg-lighter">
-                <div class="container-xl">
-                    <div class="nk-footer-wrap">
-                        <div class="nk-footer-copyright">
-                            <a href="https://layanan.baritotimurkab.go.id" target="_blank">&copy; 2026 Tim Manajemen Layanan SPBE</a>
+            <div class="col-12 col-md-6 col-lg-3">
+                <strong>Jam Kerja RSUD/PKM</strong><br>
+                <small>
+                    Jam Masuk : 08:00 WIB<br>
+                    Jam Pulang : 15:00 WIB<br>
+                    Hari Kerja : 6 Hari
+                </small>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <strong>Jam Kerja SD/SMP</strong><br>
+                <small>
+                    Jam Masuk : 07:30 WIB<br>
+                    Jam Pulang : 12:30 WIB<br>
+                    Hari Kerja : 6 Hari
+                </small>
+            </div>
+                    
+            <div class="col-12 col-md-6 col-lg-3">
+        		<strong>Jam Kerja TK</strong><br>
+        			<small>
+            			Jam Masuk : 07:30 WIB<br>
+            			Jam Pulang : 10:30 WIB<br>
+            			Hari Kerja : 6 Hari
+        			</small>
+    		</div>        
+        </div>
+    </div>
+</div>
+
+<!-- ================= ROW 2 : QR ABSENSI ================= -->
+<div class="row">
+    <div class="col-lg-6 mb-3">
+        <div class="card">
+            <input type="hidden" id="id_qr_scan" value="31">
+            <div class="row h-250px">
+                <div class="col-5">
+                    <div id="qrcode_pagi" class="m-4"></div>
+                </div>
+                <div class="col-7 bg-primary h-250px">
+                    <div class="card-body text-white">
+                        <h4>ABSENSI MASUK</h4>
+                        <h6>Scan untuk melakukan absensi masuk</h6>
+                        <div class="alert bg-dark mt-3">
+                            <h3 id="qrid"></h3>
+                            <h6 id="pukul"></h6>
                         </div>
                     </div>
                 </div>
@@ -238,114 +181,303 @@
         </div>
     </div>
 
-    <!-- SCRIPTS UTAMA -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://presensi.baritotimurkab.go.id/public/assets/js/bundle.js?ver=3.1.3"></script>
-    <script src="https://presensi.baritotimurkab.go.id/public/assets/js/scripts.js?ver=3.1.3"></script>
-    <script src="https://presensi.baritotimurkab.go.id/public/assets/qrcode/qrcode.js"></script>
+    <div class="col-lg-6 mb-3">
+        <div class="card">
+            <div class="row h-250px">
+                <div class="col-5">
+    					<div id="qrcode_out" class="m-4"></div>
+                </div>
+                <div class="col-7 bg-danger h-250px">
+                    <div class="card-body text-white">
+                        <h4>ABSENSI KELUAR</h4>
+                        <h6>Scan untuk melakukan absensi keluar</h6>
+                        <div class="alert bg-dark mt-3">
+                            <h3 id="qrid_out"></h3>
+                            <h6 id="pukulOut"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- SKRIP LOGIK PRESIENSI & GENERATOR QR CODE -->
-    <script>
-        // --- 1. INISIALISASI GENERATOR QR CODE ---
-        var qrPagi = null;
-        var qrOut = null;
+<!-- ================= ROW 3 : TABEL ABSENSI ================= -->
+<div class="row mt-3">
+    <div class="col-lg-12">
+        <div class="card p-3">
+            <h3>DAFTAR ABSENSI : <span id="tanggal-sekarang"></span></h3>
 
-        function initQRCodes() {
-            var unitId = document.getElementById("id_qr_scan").value || "31";
-            
-            // Hapus isi div jika sudah ada
-            document.getElementById("qrcode_pagi").innerHTML = "";
-            document.getElementById("qrcode_out").innerHTML = "";
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="bg-success text-white text-center">
+                            <th width="5%">No</th>
+                            <th width="25%">Nama</th>
+                            <th width="30%">Jabatan</th>
+                            <th width="8%">Check IN</th>
+                            <th width="8%">Check OUT</th>
+                            <th width="12%">Keterangan</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
 
-            // Render QR Masuk
-            qrPagi = new QRCode(document.getElementById("qrcode_pagi"), {
-                text: "MASUK_" + unitId,
-                width: 140,
-                height: 140,
-                colorDark: "#000000",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
+            <div class="table-responsive table-container">
+                <table class="table table-bordered" id="tableAbsenToday">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
-            // Render QR Keluar
-            qrOut = new QRCode(document.getElementById("qrcode_out"), {
-                text: "KELUAR_" + unitId,
-                width: 140,
-                height: 140,
-                colorDark: "#000000",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
+<script>
+let persistentNotification = null;
 
-            // Set Label ID
-            document.getElementById("qrid").innerText = "IN-" + unitId;
-            document.getElementById("qrid_out").innerText = "OUT-" + unitId;
+function showPersistentNotification(message, type = 'danger') {
+    if (persistentNotification) {
+        persistentNotification.remove();
+    }
+    const notification = document.createElement('div');
+    const bgColor = type === 'danger' ? '#dc3545' : '#ffc107';
+    const textColor = type === 'danger' ? 'white' : '#000';
+    
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.right = '20px';
+    notification.style.zIndex = '9999';
+    notification.style.minWidth = '400px';
+    notification.style.maxWidth = '500px';
+    notification.style.backgroundColor = bgColor;
+    notification.style.color = textColor;
+    notification.style.padding = '15px 20px';
+    notification.style.borderRadius = '8px';
+    notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+    notification.style.borderLeft = `5px solid ${type === 'danger' ? '#ffc107' : '#dc3545'}`;
+    notification.style.fontWeight = 'bold';
+    notification.style.cursor = 'pointer';
+    
+    const icon = type === 'danger' ? '⚠️' : '⚠️';
+    const title = 'PERINGATAN!';
+    
+    notification.innerHTML = `
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 28px;">${icon}</div>
+            <div style="flex: 1;">
+                <div style="font-size: 16px; margin-bottom: 8px;">
+                    <strong>${title}</strong>
+                </div>
+                <div style="font-size: 13px; font-weight: normal; line-height: 1.5;">
+                    ${message}
+                </div>
+                <div style="font-size: 12px; font-weight: normal; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3);">
+                    ⏰ Sistem sedang melakukan pengecekan waktu
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    persistentNotification = notification;
+}
+
+function hidePersistentNotification() {
+    if (persistentNotification) {
+        persistentNotification.remove();
+        persistentNotification = null;
+    }
+}
+
+function showTemporaryNotification(message, type = 'warning') {
+    const notification = document.createElement('div');
+    const bgColor = type === 'success' ? '#28a745' : (type === 'danger' ? '#dc3545' : '#ffc107');
+    const textColor = type === 'warning' ? '#000' : '#fff';
+    
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.right = '20px';
+    notification.style.zIndex = '9998';
+    notification.style.minWidth = '300px';
+    notification.style.backgroundColor = bgColor;
+    notification.style.color = textColor;
+    notification.style.padding = '12px 16px';
+    notification.style.borderRadius = '5px';
+    notification.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+    notification.style.fontSize = '14px';
+    notification.style.fontWeight = 'bold';
+    notification.innerHTML = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        if (notification && notification.remove) {
+            notification.remove();
         }
+    }, 5000);
+}
 
-        // --- 2. UPDATE JAM DAN TANGGAL REAL-TIME ---
-        function updateJamRealtime() {
-            var sekarang = new Date();
-            var jam = String(sekarang.getHours()).padStart(2, '0');
-            var menit = String(sekarang.getMinutes()).padStart(2, '0');
-            var detik = String(sekarang.getSeconds()).padStart(2, '0');
-            var jamFormatted = jam + ":" + menit + ":" + detik + " WIB";
-
-            document.getElementById("pukul").textContent = jamFormatted;
-            document.getElementById("pukulOut").textContent = jamFormatted;
-        }
-
-        function tampilkanTanggal() {
-            var sekarang = new Date();
-            var tanggal = String(sekarang.getDate()).padStart(2, '0');
-            var bulan = String(sekarang.getMonth() + 1).padStart(2, '0');
-            var tahun = sekarang.getFullYear();
-            document.getElementById('tanggal-sekarang').textContent = `${tanggal}/${bulan}/${tahun}`;
-        }
-
-        // --- 3. FETCH DATA ABSENSI HARI INI ---
-        function updateAbsenToday() {
-            var idUnit = document.getElementById('id_qr_scan').value;
-
-            fetch(`/get_absen_today/${idUnit}`)
-                .then(response => response.json())
-                .then(data => {
-                    var tbody = document.querySelector('#tableAbsenToday tbody');
-                    tbody.innerHTML = '';
-
-                    if (data.absen && data.absen.length > 0) {
-                        data.absen.forEach((item, index) => {
-                            var row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td class="text-center" width="5%">${index + 1}</td>
-                                <td width="25%">${item.name}</td>
-                                <td width="30%">${item.jabatan}</td>
-                                <td width="8%">${item.jam_in || '-'}</td>
-                                <td width="8%">${item.jam_out || '-'}</td>
-                                <td width="12%">${item.ket || '-'}</td>
-                            `;
-                            tbody.appendChild(row);
-                        });
-
-                        var totalDurasi = data.absen.length * 1;
-                        document.documentElement.style.setProperty('--scroll-duration', `${totalDurasi}s`);
-                    } else {
-                        tbody.innerHTML = '<tr><td colspan="6" class="text-center">Tidak ada data absensi hari ini</td></tr>';
-                    }
-                })
-                .catch(error => {
-                    console.log('Menggunakan data sampel / endpoint backend offline.');
-                });
-        }
-
-        // --- 4. RUN ON LOAD ---
-        document.addEventListener('DOMContentLoaded', function() {
-            initQRCodes();
-            tampilkanTanggal();
-            updateJamRealtime();
-            setInterval(updateJamRealtime, 1000);
-            updateAbsenToday();
-            setInterval(updateAbsenToday, 300000); // 5 menit
+async function checkComputerTime() {
+    try {
+        console.log('Memeriksa waktu komputer...');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const serverTimeResponse = await fetch('https://presensi.baritotimurkab.go.id/api/check-server-time', {
+            signal: controller.signal
         });
-    </script>
+        clearTimeout(timeoutId);
+        
+        if (!serverTimeResponse.ok) {
+            throw new Error(`HTTP error! status: ${serverTimeResponse.status}`);
+        }
+        
+        const serverTimeData = await serverTimeResponse.json();
+        
+        if (!serverTimeData.success) {
+            showTemporaryNotification('⚠️ Gagal terhubung ke server untuk verifikasi waktu', 'warning');
+            return true;
+        }
+        
+        const clientNow = new Date();
+        const clientTimestamp = Math.floor(clientNow.getTime() / 1000);
+        
+        const validateResponse = await fetch('https://presensi.baritotimurkab.go.id/api/validate-client-time', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                client_timestamp: clientTimestamp
+            })
+        });
+        
+        const validateData = await validateResponse.json();
+        
+        if (!validateData.success) {
+            const difference = validateData.time_difference_minutes || Math.round(validateData.time_difference / 60);
+            const warningMessage = `
+                <strong>❌ WAKTU KOMPUTER TIDAK SESUAI!</strong><br><br>
+                📊 Selisih: <strong style="font-size: 16px;">${difference} menit</strong><br>
+                🕐 Waktu Server: ${validateData.server_time}<br>
+                💻 Waktu Komputer: ${validateData.client_time}<br><br>
+                <strong style="color: #ffc107;">⚠️ DAMPAK:</strong><br>
+                • Data absen menjadi TIDAK AKURAT/ANOMALI<br>
+                • Laporan absensi ERROR<br><br>
+                <strong style="color: #ffc107;">✅ SOLUSI:</strong><br>
+                1. Atur jam dan tanggal komputer Anda OTOMATIS<br>
+                2. atau sesuaikan dengan waktu server di atas<br>
+                3. Refresh halaman setelah mengatur waktu
+            `;
+            
+            showPersistentNotification(warningMessage, 'danger');
+            
+            try {
+                await fetch('https://presensi.baritotimurkab.go.id/api/log-time-bypass', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_id: document.getElementById('id_qr_scan')?.value || 'unknown',
+                        client_time: validateData.client_time,
+                        server_time: validateData.server_time,
+                        time_difference: validateData.time_difference,
+                        page: window.location.pathname
+                    })
+                });
+            } catch (logError) {
+                console.error('Gagal log:', logError);
+            }
+            return false;
+        } else {
+            if (persistentNotification) {
+                hidePersistentNotification();
+            }
+            showTemporaryNotification('✓ Semangat Bekerja. Pantang Pulang Sebelum Waktunya', 'success');
+            return true;
+        }
+    } catch (error) {
+        console.error('Error checking computer time:', error);
+        showTemporaryNotification('⚠️ Gagal memverifikasi waktu komputer. Masalah koneksi lokal.', 'warning');
+        return true;
+    }
+}
+
+const CHECK_INTERVAL = 300000;
+
+document.addEventListener('DOMContentLoaded', async function() {
+    await checkComputerTime();
+    if (window.timeCheckInterval) {
+        clearInterval(window.timeCheckInterval);
+    }
+    window.timeCheckInterval = setInterval(async () => {
+        await checkComputerTime();
+    }, CHECK_INTERVAL);
+});
+
+window.addEventListener('beforeunload', function() {
+    if (window.timeCheckInterval) {
+        clearInterval(window.timeCheckInterval);
+    }
+    if (persistentNotification) {
+        persistentNotification.remove();
+    }
+});
+
+function updateAbsenToday() {
+    const idUnit = document.getElementById('id_qr_scan').value;
+
+    fetch(`https://presensi.baritotimurkab.go.id/get_absen_today/${idUnit}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const tbody = document.querySelector('#tableAbsenToday tbody');
+            tbody.innerHTML = '';
+
+            if (data.absen && data.absen.length > 0) {
+                data.absen.forEach((item, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="text-center" width="5%">${index + 1}</td>
+                        <td width="25%">${item.name}</td>
+                        <td width="30%">${item.jabatan}</td>
+                        <td width="8%">${item.jam_in || '-'}</td>
+                        <td width="8%">${item.jam_out || '-'}</td>
+                        <td width="12%">${item.ket || '-'}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+
+                const jumlahData = data.absen.length;
+                const totalDurasi = jumlahData * 1;
+                document.documentElement.style.setProperty('--scroll-duration', `${totalDurasi}s`);
+            } else {
+                tbody.innerHTML = '<tr><td colspan="6" class="text-center">Tidak ada data</td></tr>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Diganti agar tidak memunculkan alert mengganggu saat dijalankan secara lokal tanpa CORS
+            const tbody = document.querySelector('#tableAbsenToday tbody');
+            tbody.innerHTML = '<tr><td colspan="6" class="text-center text-danger">Gagal mengambil data presensi dari server. (CORS / Masalah Jaringan Lokal)</td></tr>';
+        });
+}
+
+updateAbsenToday();
+setInterval(updateAbsenToday, 300000);
+
+function tampilkanTanggal() {
+    const tanggalElement = document.getElementById('tanggal-sekarang');
+    const sekarang = new Date();
+    const tanggal = String(sekarang.getDate()).padStart(2, '0');
+    const bulan = String(sekarang.getMonth() + 1).padStart(2, '0');
+    const tahun = sekarang.getFullYear();
+    tanggalElement.textContent = `${tanggal}/${bulan}/${tahun}`;
+}
+tampilkanTanggal();
+</script>
 </body>
 </html>
